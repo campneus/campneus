@@ -3,128 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Campneus</title> <!-- Alterado para "Dashboard - Campneus" -->
+    <title>Dashboard - Campneus</title>
     <style>
-        body {
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #ffd700;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #333;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            margin: 0;
-            flex-direction: column;
+            overflow: hidden;
         }
         .container {
-            background: #222;
+            background: #1a1a1a;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
             text-align: center;
-            width: 400px; /* Largura maior do container */
+            width: 300px;
         }
         input {
             display: block;
-            width: 80%; /* Reduzindo a largura do campo de entrada */
-            margin: 10px 0;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-left: auto;
-            margin-right: auto; /* Centralizando os campos de entrada */
-        }
-        input:focus {
-            outline: none;
-            border-color: #ffcc00;
+            width: 90%;
+            margin: 10px auto;
+            padding: 8px;
+            border-radius: 10px;
+            border: 1px solid #ffd700;
+            background: #333;
+            color: #ffd700;
         }
         button {
             padding: 10px;
-            background: #ffcc00;
-            color: #333;
+            background: #ffd700;
+            color: #000;
             border: none;
             width: 100%;
             cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        button:hover {
-            background: #e6b800;
+            border-radius: 10px;
         }
         .hidden {
             display: none;
         }
-        h1 {
-            color: #ffcc00;
-            font-size: 30px;
-            margin-bottom: 20px;
-            word-wrap: break-word; /* Garantindo que o título não quebre */
+        #loginContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        h2 {
-            color: #ffcc00;
-            margin-top: 20px;
+        #welcomeContainer {
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        #error {
-            color: red;
-            margin-top: 10px;
-        }
-        iframe {
-            width: 100%;
-            height: calc(100vh - 150px); /* Ajuste dinâmico para 100% da altura disponível */
-            margin-top: 20px;
+        #dashboardFrame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             border: none;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container" id="loginContainer">
-        <h1>Dashboard - Campneus</h1>
-        <input type="text" id="username" placeholder="Usuário" onkeydown="checkEnter(event)">
-        <input type="password" id="password" placeholder="Senha" onkeydown="checkEnter(event)">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
         <button onclick="login()">Entrar</button>
-        <p id="error"></p>
+        <p id="error" style="color: red;"></p>
     </div>
-
-    <div class="container hidden" id="welcomeContainer">
-        <h2>Bem-vindo, <span id="user"></span>!</h2>
-        <iframe title="Painel Gerencial - Campneus Varejo" src="https://app.powerbi.com/reportEmbed?reportId=219658f7-388c-4554-b412-afb3120a2676&autoAuth=true&ctid=31266835-6040-4dee-8706-93cc89621604" allowFullScreen="true"></iframe>
-        <button onclick="logout()">Sair</button>
+    <div id="welcomeContainer">
+        <h2 id="welcomeMessage" class="hidden">Bem-vindo, <span id="user"></span>!</h2>
+        <iframe id="dashboardFrame" title="Painel Gerencial - Campneus Varejo" src="" allowFullScreen="true"></iframe>
+        <button id="logoutButton" class="hidden" onclick="logout()">Sair</button>
     </div>
-
     <script>
         const users = {
             user: "pass",
             "alex.cancian": "pirelli123",
             "edgard.freitas": "pirelli123",
-            admin: "pass",
             "carlos.buzatto": "pirelli123"
         };
-
+        
         function login() {
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
-
+            
             if (users[username] === password) {
-                // Ocultar tela de login e mostrar a tela de boas-vindas
                 document.getElementById("loginContainer").classList.add("hidden");
-                document.getElementById("welcomeContainer").classList.remove("hidden");
+                document.getElementById("welcomeContainer").style.display = "flex";
+                document.getElementById("welcomeMessage").classList.remove("hidden");
+                document.getElementById("logoutButton").classList.remove("hidden");
                 document.getElementById("user").textContent = username;
+                
+                // Carrega o iframe e ajusta para tela cheia
+                const iframe = document.getElementById("dashboardFrame");
+                iframe.src = "https://app.powerbi.com/view?r=eyJrIjoiYjFkMGI5NjQtNTJkZi00OWU3LTlmYWEtMWY0MGMwOGY4Yjc3IiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9";
+                iframe.style.display = "block";
             } else {
                 document.getElementById("error").textContent = "Usuário ou senha incorretos";
             }
         }
-
+        
         function logout() {
             document.getElementById("loginContainer").classList.remove("hidden");
-            document.getElementById("welcomeContainer").classList.add("hidden");
-        }
-
-        // Função para verificar se a tecla Enter foi pressionada
-        function checkEnter(event) {
-            if (event.key === 'Enter') {
-                login();
-            }
+            document.getElementById("welcomeContainer").style.display = "none";
+            document.getElementById("welcomeMessage").classList.add("hidden");
+            document.getElementById("logoutButton").classList.add("hidden");
+            
+            // Esconde o iframe ao deslogar
+            const iframe = document.getElementById("dashboardFrame");
+            iframe.src = "";
+            iframe.style.display = "none";
         }
     </script>
 </body>
