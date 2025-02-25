@@ -4,76 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Campneus</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #000;
-            font-family: Arial, sans-serif;
-            color: #ffd700;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .container {
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-            text-align: center;
-            width: 300px;
-        }
-        input {
-            display: block;
-            width: 90%;
-            margin: 10px auto;
-            padding: 8px;
-            border-radius: 10px;
-            border: 1px solid #ffd700;
-            background: #333;
-            color: #ffd700;
-        }
-        button {
-            padding: 10px;
-            background: #ffd700;
-            color: #000;
-            border: none;
-            width: 100%;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        .hidden {
-            display: none;
-        }
-        #loginContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        #welcomeContainer {
-            width: 100vw;
-            height: 100vh;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        #dashboardFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            border: none;
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Dashboard - Campneus</h1>
     <div class="container" id="loginContainer">
         <h2>Login</h2>
         <input type="text" id="username" placeholder="Usuário">
@@ -86,51 +20,6 @@
         <iframe id="dashboardFrame" title="Painel Gerencial - Campneus Varejo" src="" allowFullScreen="true"></iframe>
         <button id="logoutButton" class="hidden" onclick="logout()">Sair</button>
     </div>
-    <script>
-        const users = {
-            "guilhermesilva.santos@campneus.com.br": "TTPfbz861",
-            "rosane.monteiro@campneus.com.br": "PLZhss605",
-            "fernanda.teruel@campneus.com.br": "LWUmkl789",
-            "bismark.bispo@campneus.com.br": "NCPenn696",
-            "adilson.silva@campneus.com.br": "SWUliz821",
-            "nilton.santos@campneus.com.br": "UMIkny104",
-            "valdir.souza@campneus.com.br": "BJTtut519",
-            "ruggero.prata@campneus.com.br": "SLWhzf100",
-            "kelson.novaes@campneus.com.br": "RZTpud927",
-            "andre.tome@campneus.com.br": "UWQmiw858",
-            "elton.milczuk@campneus.com.br": "GYFgrz173",
-            "adriano.santana@campneus.com.br": "WOFgbh567"
-        };
-        
-        function login() {
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            
-            if (users[username] === password) {
-                document.getElementById("loginContainer").classList.add("hidden");
-                document.getElementById("welcomeContainer").style.display = "flex";
-                document.getElementById("welcomeMessage").classList.remove("hidden");
-                document.getElementById("logoutButton").classList.remove("hidden");
-                document.getElementById("user").textContent = username;
-                
-                const iframe = document.getElementById("dashboardFrame");
-                iframe.src = "https://app.powerbi.com/view?r=eyJrIjoiYjFkMGI5NjQtNTJkZi00OWU3LTlmYWEtMWY0MGMwOGY4Yjc3IiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9";
-                iframe.style.display = "block";
-            } else {
-                document.getElementById("error").textContent = "Usuário ou senha incorretos";
-            }
-        }
-        
-        function logout() {
-            document.getElementById("loginContainer").classList.remove("hidden");
-            document.getElementById("welcomeContainer").style.display = "none";
-            document.getElementById("welcomeMessage").classList.add("hidden");
-            document.getElementById("logoutButton").classList.add("hidden");
-            
-            const iframe = document.getElementById("dashboardFrame");
-            iframe.src = "";
-            iframe.style.display = "none";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
