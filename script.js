@@ -23,7 +23,8 @@ const users = {
     "rogerio.silva@pirelli.com":"AQLmxh460",
     "kelvin.mendonca@pirelli.com":"TIAvwy136",
     "rodrigo.silveira@pirelli.com":"HADjww254",
-    "jader.mourato@pirelli.com":"BIMhfo940"
+    "jader.mourato@pirelli.com":"BIMhfo940",
+    "rodrigo.martins":"QQAzaa10"
 };
 
 function login() {
