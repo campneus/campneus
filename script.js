@@ -1,6 +1,7 @@
 const users = {
-	"edgard.freitas": "pirelli",
-	"alex.cancian": "pirelli123",
+    "edgard.freitas": "pirelli",
+    "alex.cancian": "pirelli123",
+    "mayara.ferreira": "pirelli123",
     "guilhermesilva.santos@campneus.com.br": "TTPfbz861",
     "rosane.monteiro@campneus.com.br": "PLZhss605",
     "fernanda.teruel@campneus.com.br": "LWUmkl789",
@@ -12,7 +13,17 @@ const users = {
     "kelson.novaes@campneus.com.br": "RZTpud927",
     "andre.tome@campneus.com.br": "UWQmiw858",
     "elton.milczuk@campneus.com.br": "GYFgrz173",
-    "adriano.santana@campneus.com.br": "WOFgbh567"
+    "adriano.santana@campneus.com.br": "WOFgbh567",
+    "anderson.santos@pirelli.com":"NIEqpm802",
+    "tyago.aguiar@pirelli.com":"YIFuiu841",
+    "antonio.oliveira@pirelli.com":"KVEoca591",
+    "jefferson.santos@pirelli.com":"KHLneb544",
+    "emilio.amaral@pirelli.com":"YSMieu017",
+    "graciane.dias@pirelli.com":"BRLjta416",
+    "rogerio.silva@pirelli.com":"AQLmxh460",
+    "kelvin.mendonca@pirelli.com":"TIAvwy136",
+    "rodrigo.silveira@pirelli.com":"HADjww254",
+    "jader.mourato@pirelli.com":"BIMhfo940"
 };
 
 function login() {
