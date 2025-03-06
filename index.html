@@ -18,12 +18,16 @@
         <p id="error" style="color: red;"></p>
     </div>
 
-    <div id="welcomeContainer">
+    <div id="welcomeContainer" style="display: none;">
         <iframe id="dashboardFrame" title="Painel Gerencial - Campneus Varejo" src="" allowFullScreen="true"></iframe>
-        <button id="logoutButton" class="hidden" onclick="logout()">Sair</button>
+        <button id="logoutButton" class="hidden">Sair</button>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Biblioteca do EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Script principal -->
+    <script src="login.js"></script>
 
 </body>
 </html>
