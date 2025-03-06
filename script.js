@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("KrANAM6vU27xSj2YI"); // Public Key do EmailJS
 
-const users = {
+    const users = {
     "edgard.freitas": "pirelli",
     "alex.cancian": "pirelli123",
     "mayara.ferreira": "pirelli123",
@@ -28,7 +28,7 @@ const users = {
     "rodrigo.silveira@pirelli.com":"HADjww254",
     "jader.mourato@pirelli.com":"BIMhfo940",
     "rodrigo.martins":"QQAzaa10"
-};
+    };
 
     function login() {
         const username = document.getElementById("username").value.trim();
