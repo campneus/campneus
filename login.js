@@ -31,18 +31,23 @@ document.addEventListener("DOMContentLoaded", function () {
         "rodrigo.martins":"QQAzaa10"
     };
 
+    // Lista de usuários que podem logar a qualquer hora
+    const usuariosSemRestricao = ["edgard.freitas", "alex.cancian", "rodrigo.silveira@pirelli.com", "rodrigo.martins"];
+
     function login() {
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
         const now = new Date();
         const hours = now.getHours();
 
-        // Verifica se o horário está dentro do permitido
-        if (hours < 9 || hours >= 18) {
-            document.getElementById("error").textContent = "O acesso só é permitido das 09:00 às 18:00.";
+        // Verifica se o usuário está na lista de exceções
+        const isUserAllowedAnytime = usuariosSemRestricao.includes(username);
+
+        // Se o usuário não estiver na lista de exceções, aplica a restrição de horário
+        if (!isUserAllowedAnytime && (hours < 8 || hours >= 17)) {
+            document.getElementById("error").textContent = "O acesso só é permitido das 08:00 às 17:00.";
             return;
         }
-
-        const username = document.getElementById("username").value.trim();
-        const password = document.getElementById("password").value.trim();
 
         if (users[username] === password) {
             document.getElementById("loginContainer").classList.add("hidden");
