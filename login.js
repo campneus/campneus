@@ -2,36 +2,45 @@ document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("KrANAM6vU27xSj2YI"); // Public Key do EmailJS
 
     const users = {
-    "edgard.freitas": "pirelli",
-    "alex.cancian": "pirelli123",
-    "carlos.buzatto": "pirelli123",
-    "mayara.ferreira": "pirelli123",
-    "guilhermesilva.santos@campneus.com.br": "TTPfbz861",
-    "rosane.monteiro@campneus.com.br": "PLZhss605",
-    "fernanda.teruel@campneus.com.br": "LWUmkl789",
-    "bismark.bispo@campneus.com.br": "NCPenn696",
-    "adilson.silva@campneus.com.br": "SWUliz821",
-    "nilton.santos@campneus.com.br": "UMIkny104",
-    "valdir.souza@campneus.com.br": "BJTtut519",
-    "ruggero.prata@campneus.com.br": "SLWhzf100",
-    "kelson.novaes@campneus.com.br": "RZTpud927",
-    "andre.tome@campneus.com.br": "UWQmiw858",
-    "elton.milczuk@campneus.com.br": "GYFgrz173",
-    "adriano.santana@campneus.com.br": "WOFgbh567",
-    "anderson.santos@pirelli.com":"NIEqpm802",
-    "tyago.aguiar@pirelli.com":"YIFuiu841",
-    "antonio.oliveira@pirelli.com":"KVEoca591",
-    "jefferson.santos@pirelli.com":"KHLneb544",
-    "emilio.amaral@pirelli.com":"YSMieu017",
-    "graciane.dias@pirelli.com":"BRLjta416",
-    "rogerio.silva@pirelli.com":"AQLmxh460",
-    "kelvin.mendonca@pirelli.com":"TIAvwy136",
-    "rodrigo.silveira@pirelli.com":"HADjww254",
-    "jader.mourato@pirelli.com":"BIMhfo940",
-    "rodrigo.martins":"QQAzaa10"
+        "edgard.freitas": "pirelli",
+        "alex.cancian": "pirelli123",
+        "carlos.buzatto": "pirelli123",
+        "mayara.ferreira": "pirelli123",
+        "guilhermesilva.santos@campneus.com.br": "TTPfbz861",
+        "rosane.monteiro@campneus.com.br": "PLZhss605",
+        "fernanda.teruel@campneus.com.br": "LWUmkl789",
+        "bismark.bispo@campneus.com.br": "NCPenn696",
+        "adilson.silva@campneus.com.br": "SWUliz821",
+        "nilton.santos@campneus.com.br": "UMIkny104",
+        "valdir.souza@campneus.com.br": "BJTtut519",
+        "ruggero.prata@campneus.com.br": "SLWhzf100",
+        "kelson.novaes@campneus.com.br": "RZTpud927",
+        "andre.tome@campneus.com.br": "UWQmiw858",
+        "elton.milczuk@campneus.com.br": "GYFgrz173",
+        "adriano.santana@campneus.com.br": "WOFgbh567",
+        "anderson.santos@pirelli.com":"NIEqpm802",
+        "tyago.aguiar@pirelli.com":"YIFuiu841",
+        "antonio.oliveira@pirelli.com":"KVEoca591",
+        "jefferson.santos@pirelli.com":"KHLneb544",
+        "emilio.amaral@pirelli.com":"YSMieu017",
+        "graciane.dias@pirelli.com":"BRLjta416",
+        "rogerio.silva@pirelli.com":"AQLmxh460",
+        "kelvin.mendonca@pirelli.com":"TIAvwy136",
+        "rodrigo.silveira@pirelli.com":"HADjww254",
+        "jader.mourato@pirelli.com":"BIMhfo940",
+        "rodrigo.martins":"QQAzaa10"
     };
 
     function login() {
+        const now = new Date();
+        const hours = now.getHours();
+
+        // Verifica se o horário está dentro do permitido
+        if (hours < 9 || hours >= 18) {
+            document.getElementById("error").textContent = "O acesso só é permitido das 09:00 às 18:00.";
+            return;
+        }
+
         const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value.trim();
 
