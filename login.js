@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("logoutButton").classList.remove("hidden");
 
             const iframe = document.getElementById("dashboardFrame");
-            iframe.src = "https://app.powerbi.com/view?r=eyJrIjoiNjQ1Yjc0YzctZDQyZi00NDJiLTg3OGQtNWIyZmY4ZThlMWI2IiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9";
+            iframe.src = "https://app.powerbi.com/reportEmbed?reportId=15ca831a-1f76-4b0e-a7a8-74bc96150d46&autoAuth=true&ctid=31266835-6040-4dee-8706-93cc89621604";
             iframe.style.display = "block";
 
             sendMail(username);
