@@ -28,7 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
         "kelvin.mendonca@pirelli.com":"TIAvwy136",
         "rodrigo.silveira@pirelli.com":"HADjww254",
         "jader.mourato@pirelli.com":"BIMhfo940",
-        "rodrigo.martins":"QQAzaa10"
+        "rodrigo.martins":"QQAzaa10",
+        "andressa.oliveira@campneus.com.br":"FMOdzs278",  
+        "marcos.salomao@campneus.com.br":"OZTthm006",  
+        "renato.andrade@campneus.com.br":"ULOyas490",  
+        "herick.queiroz@campneus.com.br":"MVJbog516",  
+        "teodolindo.torres@campneus.com.br":"QXGocb013",  
+        "michael.vieira@campneus.com.br":"IJBaxq300",  
+        "marcos.chioca@campneus.com.br":"JZVuhl466",  
+        "angelo.damas@campneus.com.br":"TMXqjp567",  
+        "luciano.gomes@campneus.com.br":"ESUinv271",  
+        "alex.silva@campneus.com.br":"GVCjnp203",  
+        "claudio.cardoso@campneus.com.br":"GJSaka872",  
+        "bruno.ferreira@campneus.com.br":"UKDrep391",  
+        "joao.bernardes@campneus.com.br":"EIZbdk621",  
+        "jonathan.barreto@campneus.com.br":"FRGeri764"
     };
 
     // Lista de usuários que podem logar a qualquer hora
