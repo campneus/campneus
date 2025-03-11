@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const isUserAllowedAnytime = usuariosSemRestricao.includes(username);
 
         // Se o usuário não estiver na lista de exceções, aplica a restrição de horário
-        if (!isUserAllowedAnytime && (hours < 8 || hours >= 17)) {
-            document.getElementById("error").textContent = "O acesso só é permitido das 08:00 às 17:00.";
+        if (!isUserAllowedAnytime && (hours < 7.5 || hours >= 18.5)) {
+            document.getElementById("error").textContent = "O acesso só é permitido das 07:30 às 18:30.";
             return;
         }
 
