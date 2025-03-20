@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("KrANAM6vU27xSj2YI");
+    emailjs.init("bnv9mOuJF0AUUuTV4");
 
     const users = {
         "edgard.freitas": "pirelli",
@@ -94,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
             timestamp: formattedTime
         };
 
-        var serviceID = "service_7lubw8a";
-        var templateID = "template_n7glcjm";
+        var serviceID = "service_pgaxlwt";
+        var templateID = "template_ebja9y1";
 
         emailjs.send(serviceID, templateID, params)
         .then(res => console.log("Email enviado com sucesso!"))
