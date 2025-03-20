@@ -4,49 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const users = {
         "edgard.freitas": "pirelli",
         "alex.cancian": "pirelli123",
-        "pedro.sales": "Pirelli@9&KX",
-        "igor.mazzi": "Pirelli@998D",
         "carlos.buzatto": "pirelli123",
-        "mayara.ferreira": "pirelli123",
-        "guilhermesilva.santos@campneus.com.br": "TTPfbz861",
-        "rosane.monteiro@campneus.com.br": "PLZhss605",
-        "fernanda.teruel@campneus.com.br": "LWUmkl789",
-        "bismark.bispo@campneus.com.br": "NCPenn696",
-        "adilson.silva@campneus.com.br": "SWUliz821",
-        "nilton.santos@campneus.com.br": "UMIkny104",
-        "valdir.souza@campneus.com.br": "BJTtut519",
-        "ruggero.prata@campneus.com.br": "SLWhzf100",
-        "kelson.novaes@campneus.com.br": "RZTpud927",
-        "andre.tome@campneus.com.br": "UWQmiw858",
-        "elton.milczuk@campneus.com.br": "GYFgrz173",
-        "adriano.santana@campneus.com.br": "WOFgbh567",
-        "anderson.santos@pirelli.com":"NIEqpm802",
-        "tyago.aguiar@pirelli.com":"YIFuiu841",
-        "antonio.oliveira@pirelli.com":"KVEoca591",
-        "jefferson.santos@pirelli.com":"KHLneb544",
-        "emilio.amaral@pirelli.com":"YSMieu017",
-        "graciane.dias@pirelli.com":"BRLjta416",
-        "rogerio.silva@pirelli.com":"AQLmxh460",
-        "kelvin.mendonca@pirelli.com":"TIAvwy136",
-        "rodrigo.silveira@pirelli.com":"HADjww254",
-        "jader.mourato@pirelli.com":"BIMhfo940",
-        "rodrigo.martins":"QQAzaa10",
-        "andressa.oliveira@campneus.com.br":"FMOdzs278",  
-        "marcos.salomao@campneus.com.br":"OZTthm006",  
-        "renato.andrade@campneus.com.br":"ULOyas490",  
-        "herick.queiroz@campneus.com.br":"MVJbog516",  
-        "teodolindo.torres@campneus.com.br":"QXGocb013",  
-        "michael.vieira@campneus.com.br":"IJBaxq300",  
-        "marcos.chioca@campneus.com.br":"JZVuhl466",  
-        "angelo.damas@campneus.com.br":"TMXqjp567",  
-        "luciano.gomes@campneus.com.br":"ESUinv271",  
-        "alex.silva@campneus.com.br":"GVCjnp203",  
-        "claudio.cardoso@campneus.com.br":"GJSaka872",  
-        "bruno.ferreira@campneus.com.br":"UKDrep391",  
-        "joao.bernardes@campneus.com.br":"EIZbdk621",  
-        "jonathan.barreto@campneus.com.br":"FRGeri764"
+        "mayara.ferreira": "pirelli123"
     };
-
 
     const usuariosSemRestricao = ["edgard.freitas", "alex.cancian", "rodrigo.silveira@pirelli.com", "rodrigo.martins"];
 
@@ -116,6 +76,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("atacadoButton").addEventListener("click", function() {
         selectDashboard("https://app.powerbi.com/view?r=eyJrIjoiZDhlY2U0YjMtZWZjOS00NjA5LWEyOGQtMzYzZWI4MzFiYmFhIiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9");
     });
+    //document.getElementById("industrialCarButton").addEventListener("click", function() {
+    //    selectDashboard("");
+    // });
+    //document.getElementById("industrialMotoButton").addEventListener("click", function() {
+    //    selectDashboard("");
+    //});
     document.getElementById("backButton").addEventListener("click", function() {
         document.getElementById("dashboardContainer").style.display = "none";
         document.getElementById("selectionContainer").style.display = "flex";
