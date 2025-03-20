@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("KrANAM6vU27xSj2YI"); // Public Key do EmailJS
+    emailjs.init("KrANAM6vU27xSj2YI");
 
     const users = {
         "edgard.freitas": "pirelli",
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "jonathan.barreto@campneus.com.br":"FRGeri764"
     };
 
-    // Lista de usuários que podem logar a qualquer hora
+
     const usuariosSemRestricao = ["edgard.freitas", "alex.cancian", "rodrigo.silveira@pirelli.com", "rodrigo.martins"];
 
     function login() {
@@ -54,24 +54,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const now = new Date();
         const hours = now.getHours();
 
-        // Verifica se o usuário está na lista de exceções
         const isUserAllowedAnytime = usuariosSemRestricao.includes(username);
-
-        // Se o usuário não estiver na lista de exceções, aplica a restrição de horário
         if (!isUserAllowedAnytime && (hours < 7.5 || hours >= 18.5)) {
             document.getElementById("error").textContent = "O acesso só é permitido das 07:30 às 18:30.";
             return;
         }
 
         if (users[username] === password) {
-            document.getElementById("loginContainer").classList.add("hidden");
-            document.getElementById("welcomeContainer").style.display = "flex";
-            document.getElementById("logoutButton").classList.remove("hidden");
-
-            const iframe = document.getElementById("dashboardFrame");
-            iframe.src = "https://app.powerbi.com/view?r=eyJrIjoiOWI2OTRkYTUtNjBiZC00YWM1LTllZTEtMmQ2MWIyNTJjMzI4IiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9";
-            iframe.style.display = "block";
-
+            document.getElementById("loginContainer").style.display = "none";
+            document.getElementById("selectionContainer").style.display = "flex";
             sendMail(username);
         } else {
             document.getElementById("error").textContent = "Usuário ou senha incorretos";
@@ -79,19 +70,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function logout() {
-        document.getElementById("loginContainer").classList.remove("hidden");
-        document.getElementById("welcomeContainer").style.display = "none";
-        document.getElementById("logoutButton").classList.add("hidden");
+        document.getElementById("loginContainer").style.display = "flex";
+        document.getElementById("selectionContainer").style.display = "none";
+        document.getElementById("dashboardContainer").style.display = "none";
+        document.getElementById("dashboardFrame").src = "";
+    }
 
+    function selectDashboard(url) {
+        document.getElementById("selectionContainer").style.display = "none";
+        document.getElementById("dashboardContainer").style.display = "flex";
         const iframe = document.getElementById("dashboardFrame");
-        iframe.src = "";
-        iframe.style.display = "none";
+        iframe.src = url;
+        iframe.style.display = "block";
     }
 
     function sendMail(username) {
         var now = new Date();
         var formattedTime = now.toLocaleString();
-
         var params = {
             sendername: username,
             message: `O usuário ${username} realizou login no sistema em ${formattedTime}.`,
@@ -102,12 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var templateID = "template_n7glcjm";
 
         emailjs.send(serviceID, templateID, params)
-        .then(res => {
-            console.log("Email enviado com sucesso!");
-        })
-        .catch(error => {
-            console.error("Erro ao enviar o email: ", error);
-        });
+        .then(res => console.log("Email enviado com sucesso!"))
+        .catch(error => console.error("Erro ao enviar o email: ", error));
     }
 
     document.getElementById("loginButton").addEventListener("click", login);
@@ -117,4 +108,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     document.getElementById("logoutButton").addEventListener("click", logout);
+    document.getElementById("varejoButton").addEventListener("click", function() {
+        selectDashboard("https://app.powerbi.com/view?r=eyJrIjoiOWI2OTRkYTUtNjBiZC00YWM1LTllZTEtMmQ2MWIyNTJjMzI4IiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9");
+    });
+    document.getElementById("atacadoButton").addEventListener("click", function() {
+        selectDashboard("https://app.powerbi.com/view?r=eyJrIjoiZDhlY2U0YjMtZWZjOS00NjA5LWEyOGQtMzYzZWI4MzFiYmFhIiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9");
+    });
+    document.getElementById("backButton").addEventListener("click", function() {
+        document.getElementById("dashboardContainer").style.display = "none";
+        document.getElementById("selectionContainer").style.display = "flex";
+    });
 });
