@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("bnv9mOuJF0AUUuTV4");
 
     const users = {
-        "edgard.freitas": "pirelli",
+        "edgard.freitas": "biofoicn",
         "alex.cancian": "pirelli123",
         "pedro.sales": "Pirelli@9&Kx",
         "igor.mazzi": "Pirelli@998D",
