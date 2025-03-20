@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const users = {
         "edgard.freitas": "biofoicn",
         "alex.cancian": "pirelli123",
-        "pedro.sales": "Pirelli@9&Kx",
+        "pedro.sales@pirelli.com": "Pirelli@9K25",
         "igor.mazzi": "Pirelli@998D",
         "carlos.buzatto": "pirelli123",
         "mayara.ferreira": "pirelli123",
