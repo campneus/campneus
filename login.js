@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "jonathan.barreto@campneus.com.br":"FRGeri764"
     };
 
-    const usuariosSemRestricao = ["edgard.freitas", "alex.cancian", "rodrigo.silveira@pirelli.com", "rodrigo.martins", "pedro.sales"];
+    const usuariosSemRestricao = ["edgard.freitas", "alex.cancian", "rodrigo.silveira@pirelli.com", "rodrigo.martins", "pedro.sales@pirello.com"];
 
     function login() {
         const username = document.getElementById("username").value.trim();
