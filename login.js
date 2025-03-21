@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const users = {
-        "edgard.freitas": "biofoicn",
+        "edgard.freitas": "pirelli1",
         "alex.cancian": "pirelli123",
         "pedro.sales@pirelli.com": "Pirelli@9K25",
         "igor.mazzi": "Pirelli@998D",
