@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("bnv9mOuJF0AUUuTV4");
+    function verificarEmailJS() {
+        if (typeof emailjs === "undefined") {
+            console.log("Aguardando carregamento do EmailJS...");
+            setTimeout(verificarEmailJS, 500);
+        } else {
+            console.log("EmailJS carregado e pronto!");
+        }
+    }
 
     const users = {
         "edgard.freitas": "biofoicn",
