@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "carlos.buzatto": "pirelli123",
         "mayara.ferreira": "pirelli123",
         "guilhermesilva.santos@campneus.com.br": "TTPfbz861",
-        "carlos.venancio@campneus.com.b": "AFGabn122",
+        "carlos.venancio@campneus.com.br": "AFGabn122",
         "rosane.monteiro@campneus.com.br": "PLZhss605",
         "fernanda.teruel@campneus.com.br": "LWUmkl789",
         "bismark.bispo@campneus.com.br": "NCPenn696",
