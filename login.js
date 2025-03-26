@@ -118,10 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     document.getElementById("logoutButton").addEventListener("click", logout);
     document.getElementById("varejoButton").addEventListener("click", function() {
-        selectDashboard("https://app.powerbi.com/view?r=eyJrIjoiOWI2OTRkYTUtNjBiZC00YWM1LTllZTEtMmQ2MWIyNTJjMzI4IiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9");
+        selectDashboard("https://app.powerbi.com/view?r=eyJrIjoiYmZiNTUyZGEtYTY4NC00MjI0LThhNWQtMjAzMGM2NmQ0NmVkIiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9");
     });
     document.getElementById("atacadoButton").addEventListener("click", function() {
-        selectDashboard("https://app.powerbi.com/view?r=eyJrIjoiZDhlY2U0YjMtZWZjOS00NjA5LWEyOGQtMzYzZWI4MzFiYmFhIiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9");
+        selectDashboard("https://app.powerbi.com/view?r=eyJrIjoiZjVlZWU3Y2YtZjBhZS00MjhkLTg4NmMtZWViZjYyOTU5OWVhIiwidCI6IjMxMjY2ODM1LTYwNDAtNGRlZS04NzA2LTkzY2M4OTYyMTYwNCJ9");
     });
     //document.getElementById("industrialCarButton").addEventListener("click", function() {
     //    selectDashboard("");
