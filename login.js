@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "pedro.sales@pirelli.com": "Pirelli@9K25",
         "igor.mazzi": "Pirelli@998D",
         "carlos.buzatto": "pirelli123",
-        "mayara.ferreira": "pirelli123",
+        "mayara.ferreira": "Pirelli@123",
         "guilhermesilva.santos@campneus.com.br": "TTPfbz861",
         "carlos.venancio@campneus.com.br": "AFGabn122",
         "rosane.monteiro@campneus.com.br": "PLZhss605",
@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const hours = now.getHours();
 
         const isUserAllowedAnytime = usuariosSemRestricao.includes(username);
-        if (!isUserAllowedAnytime && (hours < 7.5 || hours >= 18.5)) {
-            document.getElementById("error").textContent = "O acesso só é permitido das 07:30 às 18:30.";
+        if (!isUserAllowedAnytime && (hours < 7 || hours >= 19)) {
+            document.getElementById("error").textContent = "O acesso só é permitido das 07:00 às 19:00.";
             return;
         }
 
