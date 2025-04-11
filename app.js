@@ -107,3 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("loginContainer").style.display = "block";
     });
 });
+
+
+export { auth };
