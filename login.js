@@ -52,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "claudio.cardoso@campneus.com.br":"GJSaka872",  
         "bruno.ferreira@campneus.com.br":"UKDrep391",  
         "joao.bernardes@campneus.com.br":"EIZbdk621",  
-        "jonathan.barreto@campneus.com.br":"FRGeri764"
+        "jonathan.barreto@campneus.com.br":"FRGeri764",
+        "marcelo.menezes@campneus.com.br":"PIRnos255"
     };
 
     const usuariosSemRestricao = ["edgard.freitas", "alex.cancian", "rodrigo.silveira@pirelli.com", "rodrigo.martins", "pedro.sales@pirelli.com"];
