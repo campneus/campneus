@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Campneus</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campneus</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>Dashboard - Campneus</h1>
+  <h1 class="main-title">Dashboard Faturamento</h1>
 
-    <div class="container" id="loginContainer">
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Usuário">
-        <input type="password" id="password" placeholder="Senha">
-        <button id="loginButton">Entrar</button>
-        <p id="error" style="color: red;"></p>
+  <div class="container" id="loginContainer">
+    <h2>Entrar no sistema:</h2>
+    <input type="email" id="email" placeholder="Email">
+
+    <!-- Campo de senha com botão de mostrar/ocultar -->
+    <div class="password-container">
+      <input type="password" id="password" placeholder="Senha">
+      <span id="togglePassword" class="toggle-icon">👁️</span>
     </div>
 
-    <div id="selectionContainer" style="display: none;">
-        <h2>Escolha qual segmento deseja visualizar: </h2>
-        <button id="varejoButton">Varejo</button>
-        <button id="atacadoButton">Industrial</button>
-        <button id="industrialCarButton">Atacado CAR<br>(em construção) </button>
-        <button id="industrialMotoButton">Atacado MOTO<br>(em construção) </button>
-        <button id="logoutButton">Sair</button>
+    <br>
+    <button id="loginButton">Entrar</button>
+    <br><br><br><br>
+    <button id="forgotPasswordButton">Esqueci minha senha</button>
+    <p id="error" style="color: red;"></p>
+  </div>
+
+  <div id="selectionContainer" style="display: none;">
+    <h2>Escolha qual segmento deseja visualizar:</h2>
+    <div class="button-grid">
+      <button id="varejoButton">Varejo</button>
+      <button id="atacadoButton">Industrial</button>
+      <button id="industrialCarButton">Atacado CAR<br>(em construção)</button>
+      <button id="industrialMotoButton">Atacado MOTO<br>(em construção)</button>
     </div>
+    <br><br><br><br><br><br>
+    <button id="logoutButton">Sair</button>
+  </div>
 
-    <div id="dashboardContainer" style="display: none;">
-        <iframe id="dashboardFrame" title="Painel Gerencial - Campneus" src="" allowFullScreen="true"></iframe>
-        <button id="backButton">Voltar</button>
-    </div>
+  <div id="dashboardContainer" style="display: none;">
+    <button id="backButton">Voltar</button>
+    <iframe id="dashboardFrame" title="Painel Gerencial - Campneus" src="" allowfullscreen></iframe>
+  </div>
 
-<!-- Ordem correta -->
-<script type="module" src="app.js"></script>
-<script src="email.js"></script>
-<script type="module" src="login.js"></script>
+  <script type="module" src="app.js"></script>
+  <script src="email.js"></script>
+  <script type="module" src="login.js"></script>
 
-    
+  <!-- Script para capturar tecla Enter no login -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+
+      [emailInput, passwordInput].forEach(input => {
+        input.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("loginButton").click();
+          }
+        });
+      });
+
+      // Mostrar/ocultar senha
+      const toggle = document.getElementById("togglePassword");
+      const passwordField = document.getElementById("password");
+
+      toggle.addEventListener("click", function () {
+        const isHidden = passwordField.type === "password";
+        passwordField.type = isHidden ? "text" : "password";
+        this.textContent = isHidden ? "🔒" : "👁️";
+      });
+    });
+  </script>
 </body>
 </html>
